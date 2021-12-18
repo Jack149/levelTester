@@ -23,7 +23,7 @@ basic.forever(function () {
         TILT += 1
     } else {
         basic.showIcon(IconNames.Yes)
-        radio.sendNumber(111)
+        radio.sendNumber(0)
         TILT += 1
     }
 })
