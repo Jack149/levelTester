@@ -6,22 +6,13 @@ radio.setTransmitPower(7)
 basic.forever(function () {
     x = input.acceleration(Dimension.X)
     y = input.acceleration(Dimension.Y)
-    if (Math.abs(x) > 128) {
-        basic.showIcon(IconNames.No)
+    if (Math.abs(x) > 192) {
         radio.sendNumber(111)
         TILT += 1
-    } else if (Math.abs(y) > 128) {
-        basic.showLeds(`
-            . . # . .
-            . . # . .
-            # # # # #
-            . . # . .
-            . . # . .
-            `)
+    } else if (Math.abs(y) > 192) {
         radio.sendNumber(111)
         TILT += 1
     } else {
-        basic.showIcon(IconNames.Yes)
         radio.sendNumber(0)
     }
 })
